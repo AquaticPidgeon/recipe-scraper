@@ -56,6 +56,7 @@ module.exports.scrapeCooks = (callback) => {
             // read subpage DOM and scrape data
             const title = $page('.title').text();
             const imgUrl = $page('img.photo').attr('src') ||
+              // default food image if imgUrl not found
              'http://mukut.se/default_food_menu_foto/default_food_image.jpeg';
             const ingredients = [];
 
