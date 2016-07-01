@@ -1,0 +1,28 @@
+{
+  "settings": {
+    "react": {
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.0" // React version, default to the latest React stable release
+    }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "quotes": [2, "single"],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "no-console": 0,
+  },
+  "plugins": [
+    "react"
+  ]
+}
