@@ -1,10 +1,10 @@
 {
-  "name": "web-scraper",
+  "name": "recipe-scraper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "scrapes recipe sites",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
     "express": "^4.14.0",
     "fs": "0.0.2",
     "lodash": "^4.13.1",
-    "mongoose": "^4.5.2",
     "request-promise": "^3.0.0"
   },
   "devDependencies": {

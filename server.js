@@ -3,6 +3,7 @@ const rc = require('./recipeCrawler.js');
 
 // Establish express server
 const server = express();
+const port = 8080;
 
 // Set up server routes
 server.get('/', (req, res) => {
@@ -15,7 +16,7 @@ server.get('/refresh', (req, res) => {
 });
 
 // Initialize listener
-server.listen(8080, () => {
-  console.log('Now serving up recipe data on port 8080');
+server.listen(port, () => {
+  console.log(`Now serving up recipe data on port ${port}`);
 });
 
