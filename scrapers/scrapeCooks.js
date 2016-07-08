@@ -2,7 +2,7 @@ const fs = require('fs');
 const rp = require('request-promise');
 const cheerio = require('cheerio');
 const _ = require('lodash');
-const { saveData } = require('../utils/utility.js');
+const { saveData, firstCap } = require('../utils/utility.js');
 
 // Recipe Data output file
 const recipeFile = './data/recipesCooks.JSON';
@@ -54,10 +54,10 @@ module.exports.scrapeCooks = (callback) => {
         rp(options)
           .then(($page) => {
             // read subpage DOM and scrape data
-            const title = $page('.title').text();
+            const title = firstCap($page('.title').text());
             const imgUrl = $page('img.photo').attr('src') ||
               // default food image if imgUrl not found
-             'http://mukut.se/default_food_menu_foto/default_food_image.jpeg';
+             'http://www.liversupport.com/wp-content/uploads/2011/09/saffron-1000x576.jpg';
             const ingredients = [];
 
             // get ingredient data
@@ -90,8 +90,8 @@ module.exports.scrapeCooks = (callback) => {
             }
           });
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
-
-// scrapeCooks();
-

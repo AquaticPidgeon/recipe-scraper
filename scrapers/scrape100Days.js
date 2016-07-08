@@ -59,7 +59,8 @@ module.exports.scrape100Days = (callback) => {
             // read subpage DOM and scrape data
             const title = $page('h1.entry-title').text();
             const imgUrl = $page('img.aligncenter').attr('src') ||
-             'http://mukut.se/default_food_menu_foto/default_food_image.jpeg';
+              // default food image if imgUrl not found
+             'http://www.liversupport.com/wp-content/uploads/2011/09/saffron-1000x576.jpg';
             const ingredients = [];
 
             // get ingredient data
@@ -90,13 +91,10 @@ module.exports.scrape100Days = (callback) => {
               console.log('Scraping 100 Days of Real Food complete!');
               callback(null);
             }
+          })
+          .catch((err) => {
+            console.log(err);
           });
-          // .catch((err) => {
-          //   console.log(err);
-          // });
       });
     });
 };
-
-// scrape100Days();
-

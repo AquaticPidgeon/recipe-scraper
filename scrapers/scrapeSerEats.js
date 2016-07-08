@@ -97,7 +97,8 @@ module.exports.scrapeSeriousEats = (callback) => {
             }
           });
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
-
-// scrapeSeriousEats();

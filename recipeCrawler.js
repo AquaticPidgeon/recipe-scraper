@@ -9,5 +9,3 @@ module.exports.recipeCrawler = () => {
   const funcs = recipeScrapers.concat(combineRecipes);
   async.series(funcs);
 };
-
-// recipeCrawler(recipeScrapers);
